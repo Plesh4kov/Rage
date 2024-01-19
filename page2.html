@@ -1,32 +1,114 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ваша Сторінка</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Animated Rainbow Border with Social Media Buttons</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .rainbow-box {
+            --box-width: 1120px;
+            --box-height: 550px;
+            --image-size: 500px;
+            --element-spacing: 20px;
+
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to left, #050505 0%, #050505 80%, transparent 100%);
+            padding: var(--element-spacing);
+            border-radius: 12px;
+            border: 3px solid transparent;
+            animation: rainbow 3s linear infinite;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: var(--box-width);
+            height: var(--box-height);
+            margin: var(--element-spacing);
+        }
+
+        @keyframes rainbow {
+            0%, 100% { border-color: red; }
+            14% { border-color: orange; }
+            28% { border-color: yellow; }
+            42% { border-color: green; }
+            56% { border-color: blue; }
+            70% { border-color: indigo; }
+            84% { border-color: violet; }
+        }
+
+        .image {
+            width: var(--image-size);
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .content {
+            color: white;
+            font-size: 16px;
+            margin-left: var(--element-spacing);
+        }
+
+        .header {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .creator {
+            color: #ba2f2f;
+            margin-bottom: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .social-button {
+            position: absolute;
+            bottom: 10px;
+            display: inline-block;
+            padding: 8px;
+            background-color: black; /* Чорний колір кнопки */
+            color: white;
+            border: 2px solid black; /* Чорна обводка */
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .twitter-button {
+            right: 60px; 
+        }
+
+        .instagram-button {
+            right: 10px; 
+        }
+    </style>
 </head>
 <body>
-    <div class="video-background">
-        <video autoplay loop muted>
-            <source src="your-video.mp4" type="video/mp4">
-            Ваш браузер не підтримує відео.
-        </video>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#roadmap">RoadMap</a></li>
-            <li><a href="#thecreator">TheCreator</a></li>
-        </ul>
-    </nav>
-
-    <div class="content">
-        <div class="image-placeholder"></div>
-        <div class="text">
-            <h1>Заголовок</h1>
-            <p>Тут буде ваш текст.</p>
+    <div class="rainbow-box">
+        <img src="https://storage.googleapis.com/s.mkswft.com/RmlsZTo5ODcxYjc3NS1lZjdiLTQ2NDktYTgzZC0wMzk1MDUxYTE5YzM=/download%20(5).png" alt="Image" class="image">
+        <div class="content">
+            <div class="header">Ralf | RLF - Real Life Form</div>
+            <div class="creator">THE CREATOR</div>
+            <p>The creator of this unreal project and the little one, a professional BMX and MTB rider, a raider and director of live broadcasts, a producer and the current leader of the NFT project that will continue to rush forward</p>
+            <a href="https://twitter.com/RealLifeForm" target="_blank" class="social-button twitter-button">Twitter</a>
+            <a href="https://instagram.com" target="_blank" class="social-button instagram-button">Instagram</a>
         </div>
     </div>
 </body>
