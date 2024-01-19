@@ -3,7 +3,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #0e0e10; /* Темний фон */
+    color: #fff; /* Білий текст */
 }
 
 header, nav, section, footer {
@@ -11,7 +12,7 @@ header, nav, section, footer {
 }
 
 header {
-    background: #333;
+    background: #9146ff; /* Фіолетовий колір для заголовку */
     color: #fff;
     text-align: center;
 }
@@ -19,6 +20,7 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center; /* Центрування навігації */
 }
 
 nav ul li {
@@ -29,16 +31,18 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-weight: bold;
+    color: #fff; /* Білий текст для посилань */
 }
 
 section {
     margin-bottom: 20px;
-    background: #fff;
+    background: #18181b; /* Темний фон для секцій */
     padding: 10px;
+    color: #fff; /* Білий текст у секціях */
 }
 
 footer {
     text-align: center;
-    background: #333;
+    background: #0e0e10; /* Темний фон для футера */
     color: #fff;
 }
