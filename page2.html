@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en"> 
-       
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Rainbow Border with Social Media Buttons</title>
     <style>
         .topnav {
-    background-color: #333;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 2;
-}
+            background-color: #1f1f1f;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10; /* Збільшений z-index */
+        }
+
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f0f0f000;
             overflow-x: hidden;
             overflow-y: auto;
         }
@@ -28,11 +28,29 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            position: relative;
         }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        .logo {
+    float: left;
+    display: block;
+    padding: 10px 13px;
+    width: 50px; /* Початковий розмір логотипу */
+    height: auto; /* Зберігає пропорції зображення */
+}
 
         .rainbow-box {
             --box-width: 1120px;
-            --box-height: 550px;
+            --box-height: 500px;
             --image-size: 500px;
             --element-spacing: 20px;
 
@@ -49,6 +67,7 @@
             width: var(--box-width);
             height: var(--box-height);
             margin: var(--element-spacing);
+            z-index: 5; /* Додано z-index */
         }
 
         @keyframes rainbow {
@@ -91,9 +110,9 @@
             bottom: 10px;
             display: inline-block;
             padding: 8px;
-            background-color: black; /* Чорний колір кнопки */
-            color: white;
-            border: 2px solid black; /* Чорна обводка */
+            background-color: black;
+            color: rgb(255, 255, 255);
+            border: 2px solid black;
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
@@ -110,20 +129,18 @@
     </style>
 </head>
 <body>
-        <!-- Відео-бекграунд -->
-        <video autoplay muted loop id="myVideo" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
-            <source src="https://rageraptors.at.ua/Raptors_in_the_Kitchen-Iconic_Scene-Jurassic_Park-.mp4" type="video/mp4">
-        </video>
-        
+    <video autoplay muted loop id="myVideo">
+        <source src="https://rageraptors.at.ua/Raptors_in_the_Kitchen-Iconic_Scene-Jurassic_Park-.mp4" type="video/mp4">
+    </video>
+
     <div class="topnav">
-        <img src="path_to_your_logo.png" alt="Logo" style="float: left; display: block; padding: 14px 16px;">
+        <img src="https://storage.googleapis.com/s.mkswft.com/RmlsZTplMWU0ZjM4MC02MTg4LTRiNTktYmFjZS03ZDQ4MjllNDE3ZWM=/Group_1_copy_22.png" alt="Logo" class="logo">
         <div style="float: right;">
-            <a href="#home" style="padding: 14px 16px; text-decoration: none; color: white; display: inline-block;">Home</a>
-            <a href="#roadmap" style="padding: 14px 16px; text-decoration: none; color: white; display: inline-block;">RoadMap</a>
-            <a href="#creator" style="padding: 14px 16px; text-decoration: none; color: white; display: inline-block;">TheCreator</a>
+            <a href="#home" style="padding: 20px 21px; text-decoration: none; color: white; display: inline-block;">Home</a>
+            <a href="#roadmap" style="padding: 20px 21px; text-decoration: none; color: white; display: inline-block;">RoadMap</a>
+            <a href="#creator" style="padding: 20px 21px; text-decoration: none; color: white; display: inline-block;">TheCreator</a>
         </div>
     </div>
-
 
     <div class="rainbow-box">
         <img src="https://storage.googleapis.com/s.mkswft.com/RmlsZTo5ODcxYjc3NS1lZjdiLTQ2NDktYTgzZC0wMzk1MDUxYTE5YzM=/download%20(5).png" alt="Image" class="image">
@@ -137,4 +154,3 @@
     </div>
 </body>
 </html>
-
