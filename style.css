@@ -1,48 +1,67 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    background-color: #0e0e10; /* Темний фон */
-    color: #fff; /* Білий текст */
+    font-family: Arial, sans-serif;
 }
 
-header, nav, section, footer {
-    padding: 20px;
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
 }
 
-header {
-    background: #9146ff; /* Фіолетовий колір для заголовку */
-    color: #fff;
+video {
+    width: 100%;
+    height: auto;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
     text-align: center;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    text-align: center; /* Центрування навігації */
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    font-weight: bold;
-    color: #fff; /* Білий текст для посилань */
+    color: white;
 }
 
-section {
-    margin-bottom: 20px;
-    background: #18181b; /* Темний фон для секцій */
-    padding: 10px;
-    color: #fff; /* Білий текст у секціях */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
-footer {
-    text-align: center;
-    background: #0e0e10; /* Темний фон для футера */
-    color: #fff;
+.image-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin-right: 20px;
+}
+
+.text h1 {
+    margin: 0;
+}
+
+.text p {
+    margin-top: 10px;
 }
