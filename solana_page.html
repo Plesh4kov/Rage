@@ -3,15 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Інформація про Гаманець</title>
+    <title>Solana Wallet Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #connectWallet {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        #walletInfo {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ddd;
+            border-radius: 8px;
+        }
+
+        .walletDetail {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Інформація про Solana Гаманець</h1>
     <button id="connectWallet">Підключити Гаманець</button>
     <div id="walletInfo"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js"></script>
     <script>
-        // Тут буде JavaScript код
+        document.getElementById('connectWallet').addEventListener('click', async () => {
+            if (window.solana && window.solana.isPhantom) {
+                try {
+                    const response = await window.solana.connect();
+                    const publicKey = response.publicKey.toString();
+                    document.getElementById('walletInfo').innerText = 'Гаманець підключено: ' + publicKey;
+                    getWalletBalance(publicKey);
+                } catch (err) {
+                    console.error('Не вдалося підключити гаманець:', err);
+                }
+            } else {
+                console.log('Гаманець Solana не знайдено!');
+            }
+        });
+
+        async function getWalletBalance(publicKey) {
+            try {
+                const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
+                const walletBalance = await connection.getBalance(new solanaWeb3.PublicKey(publicKey));
+                document.getElementById('walletInfo').innerHTML += '<div class="walletDetail">Баланс: ' + (walletBalance / solanaWeb3.LAMPORTS_PER_SOL).toFixed(2) + ' SOL</div>';
+            } catch (err) {
+                console.error('Помилка отримання балансу гаманця:', err);
+            }
+        }
     </script>
 </body>
 </html>

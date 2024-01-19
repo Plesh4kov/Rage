@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
+       
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Rainbow Border with Social Media Buttons</title>
     <style>
+        .topnav {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
         html, body {
             height: 100%;
             margin: 0;
@@ -101,6 +110,21 @@
     </style>
 </head>
 <body>
+        <!-- Відео-бекграунд -->
+        <video autoplay muted loop id="myVideo" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
+            <source src="https://rageraptors.at.ua/Raptors_in_the_Kitchen-Iconic_Scene-Jurassic_Park-.mp4" type="video/mp4">
+        </video>
+        
+    <div class="topnav">
+        <img src="path_to_your_logo.png" alt="Logo" style="float: left; display: block; padding: 14px 16px;">
+        <div style="float: right;">
+            <a href="#home" style="padding: 14px 16px; text-decoration: none; color: white; display: inline-block;">Home</a>
+            <a href="#roadmap" style="padding: 14px 16px; text-decoration: none; color: white; display: inline-block;">RoadMap</a>
+            <a href="#creator" style="padding: 14px 16px; text-decoration: none; color: white; display: inline-block;">TheCreator</a>
+        </div>
+    </div>
+
+
     <div class="rainbow-box">
         <img src="https://storage.googleapis.com/s.mkswft.com/RmlsZTo5ODcxYjc3NS1lZjdiLTQ2NDktYTgzZC0wMzk1MDUxYTE5YzM=/download%20(5).png" alt="Image" class="image">
         <div class="content">
@@ -113,3 +137,4 @@
     </div>
 </body>
 </html>
+
